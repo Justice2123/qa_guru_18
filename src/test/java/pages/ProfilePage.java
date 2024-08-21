@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import data.DataTest;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.empty;
@@ -26,7 +27,8 @@ public class ProfilePage  {
 
     @Step("проверка отображения User Name в UI")
     public ProfilePage checkUserNameUI() {
-        userName.shouldBe();
+        DataTest data = new DataTest();
+        userName.shouldBe(text(data.login));
         return this;
     }
 
